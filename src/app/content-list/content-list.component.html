@@ -1,10 +1,21 @@
 <form onsubmit="return false;">
+
+    <app-create-content (newContentEvent)="addContentToList($event)"></app-create-content>
+
+
+
     <input #checkTitle>
     <button type="submit" (click)="checkIfTitleExists(checkTitle.value)">Does it exist?</button>
+  <br>
+
+
+
 </form>
 <div class="title-check">
     {{ message }}
 </div>
+
+
 
 <app-content-card appHoverCard [borderVisible]="isLast || isFirst"
     *ngFor="let song of musicList; last as isLast; first as isFirst" [class.is-last]="isLast" [song]="song"

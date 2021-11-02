@@ -1,0 +1,12 @@
+<form onsubmit="return false;">
+
+  Author:<input #author><br>
+  ImgUrl:<input #imgUrl><br>
+  Type:<input #type><br>
+  Title:<input #title><br>
+  Body:<input #body><br>
+  Tags:<input #tags><br>
+
+  <button type="submit" (click)="addContentToList(author.value, imgUrl.value, type.value, title.value, body.value, [tags.value])">Add Content</button>
+
+</form>

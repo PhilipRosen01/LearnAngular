@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Content } from '../helper-files/content-interface'
 
 @Component({
   selector: 'app-content-list',
@@ -59,6 +60,8 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   checkIfTitleExists(title: string): void {
     //do my check if the title exists
     // console.log(title);
@@ -83,4 +86,9 @@ export class ContentListComponent implements OnInit {
     this.musicList = [...this.musicList];
 
   }
+
+  addContentToList(newContentFromChild: Content){
+  this.musicList.push(newContentFromChild);
+  this.musicList = Object.assign([], this.musicList)}
+
 }
